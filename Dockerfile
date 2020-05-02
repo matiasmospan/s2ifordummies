@@ -1,5 +1,6 @@
 FROM centos:latest
-RUN useradd -u 1001 -N -g 0 default
+RUN useradd -u 1001 default
+RUN usermod -a -G 0 default
 RUN yum -y install httpd
 RUN mkdir /s2iscripts
 COPY assemble /s2iscripts/
